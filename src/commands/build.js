@@ -1,31 +1,26 @@
 const { Command, flags } = require("@oclif/command");
 const Listr = require("listr");
-const apiGateway = require("../tasks/apiGateway");
-const lambdas = require("../tasks/lambdas");
-const rds = require("../tasks/rds");
-const sns = require("../tasks/sns");
+const createCfTemplate = require("../tasks/createCfTemplate");
+const bootstrapDeployment = require("../tasks/bootstrapDeployment");
+const deployInfrastructure = require("../tasks/deployInfrastructure");
 
 class BuildCommand extends Command {
   async run() {
-    // const { flags } = this.parse(BuildCommand);
-    // const name = flags.name || "world";
-    console.log("\nDeploying dispatchr webhook service infrastructure\n");
+    console.log(
+      "\nDeploying dispatchr webhook service infrastructure.  This may take 10+ minutes.\n"
+    );
     const tasks = new Listr([
       {
-        title: "API Gateway",
-        task: apiGateway.build,
+        title: "Cloud Formation Template Creation",
+        task: createCfTemplate,
       },
       {
-        title: "Lambdas",
-        task: lambdas.build,
+        title: "Bootstrapping Deployment",
+        task: bootstrapDeployment,
       },
       {
-        title: "RDS",
-        task: rds.build,
-      },
-      {
-        title: "SNS",
-        task: sns.build,
+        title: "Deploying Infrastructure",
+        task: deployInfrastructure,
       },
     ]);
 
@@ -38,9 +33,5 @@ class BuildCommand extends Command {
 BuildCommand.description = `The 'build' command sets up all of the AWS infrastructure that is required to run the
   dispatchr webhook service.  It takes no arguments and relies on the AWS CLI, which
   needs to be installed and configured before using this command.`;
-
-// BuildCommand.flags = {
-//   name: flags.string({char: 'n', description: 'name to print'}),
-// }
 
 module.exports = BuildCommand;
