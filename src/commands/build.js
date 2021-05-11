@@ -1,9 +1,13 @@
 const { Command, flags } = require("@oclif/command");
 const Listr = require("listr");
-const createCfTemplate = require("../tasks/createCfTemplate");
-const bootstrapDeployment = require("../tasks/bootstrapDeployment");
-const deployInfrastructure = require("../tasks/deployInfrastructure");
-const installDependencies = require("../tasks/installDependencies");
+const importTbCode = require("../tasks/importTbCode");
+const createTbCfTemp = require("../tasks/createTbCfTemp");
+const bootstrapTb = require("../tasks/bootstrapTb");
+const deployTb = require("../tasks/deployTb");
+
+// const importUiCode = require("../tasks/importUiCode");
+// const createUiBuild = require("../tasks/createUiBuild");
+// const deployUi = require("../tasks/deployUi");
 
 class BuildCommand extends Command {
   async run() {
@@ -13,19 +17,19 @@ class BuildCommand extends Command {
     const tasks = new Listr([
       {
         title: "Installing dependencies",
-        task: installDependencies,
+        task: importTbCode,
       },
       {
         title: "Cloud Formation Template Creation",
-        task: createCfTemplate,
+        task: createTbCfTemp,
       },
       {
         title: "Bootstrapping Deployment",
-        task: bootstrapDeployment,
+        task: bootstrapTb,
       },
       {
         title: "Deploying Infrastructure",
-        task: deployInfrastructure,
+        task: deployTb,
       },
     ]);
 
