@@ -1,6 +1,7 @@
 const { Command, flags } = require("@oclif/command");
 const Listr = require("listr");
 const importTbCode = require("../tasks/importTbCode");
+const importLambdaCode = require("../tasks/importLambdaCode");
 const createTbCfTemp = require("../tasks/createTbCfTemp");
 const bootstrapTb = require("../tasks/bootstrapTb");
 const deployTb = require("../tasks/deployTb");
@@ -12,23 +13,27 @@ const deployTb = require("../tasks/deployTb");
 class BuildCommand extends Command {
   async run() {
     console.log(
-      "\nDeploying dispatchr webhook service infrastructure.  This may take 10+ minutes.\n"
+      "\nDeploying Tacklebox webhook service infrastructure.  This may take 10+ minutes.\n"
     );
     const tasks = new Listr([
       {
-        title: "Installing dependencies",
+        title: "AWS CDK module import",
         task: importTbCode,
       },
       {
-        title: "Cloud Formation Template Creation",
+        title: "AWS Lambda module import",
+        task: importLambdaCode,
+      },
+      {
+        title: "AWS CloudFormation template generation",
         task: createTbCfTemp,
       },
       {
-        title: "Bootstrapping Deployment",
+        title: "Bootstrap deployment",
         task: bootstrapTb,
       },
       {
-        title: "Deploying Infrastructure",
+        title: "Infrastructure deployment",
         task: deployTb,
       },
     ]);
@@ -40,7 +45,7 @@ class BuildCommand extends Command {
 }
 
 BuildCommand.description = `The 'build' command sets up all of the AWS infrastructure that is required to run the
-  dispatchr webhook service.  It takes no arguments and relies on the AWS CLI, which
+  Tacklebox webhook service.  It takes no arguments and relies on the AWS CLI, which
   needs to be installed and configured before using this command.`;
 
 module.exports = BuildCommand;

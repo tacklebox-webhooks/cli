@@ -8,7 +8,7 @@ const removeTbCode = require("../tasks/removeTbCode");
 class DestroyCommand extends Command {
   async run() {
     console.log(
-      "\nTearing down dispatchr webhook service infrastructure.  This may take 10+ minutes.\n"
+      "\nTearing down Tacklebox webhook service infrastructure.  This may take 10+ minutes.\n"
     );
     const tasks = new Listr([
       {
@@ -28,7 +28,7 @@ class DestroyCommand extends Command {
 }
 
 DestroyCommand.description = `The 'destroy' command tears down all of the AWS infrastructure that is required to run the
-dispatchr webhook service.  It takes no arguments and relies on the AWS CLI, which
+Tacklebox webhook service.  It takes no arguments and relies on the AWS CLI, which
 needs to be installed and configured before using this command.`;
 
 module.exports = DestroyCommand;

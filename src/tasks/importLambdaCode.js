@@ -1,14 +1,16 @@
 const { Observable } = require("rxjs");
 const { exec } = require("child_process");
 
-const command = `cd src &&
-  git clone https://github.com/hook-captain/WHaaS-CDK.git infrastructure &&
-  cd infrastructure &&
-  rm -rf .git`;
+const command = `cd src/infrastructure &&
+  rm -rf lambdas &&
+  git clone https://github.com/hook-captain/webhook-service.git toRemove &&
+  mv toRemove/lambdas lambdas &&
+  rm -rf toRemove &&
+  npm install`;
 
 const importTbCode = () => {
   return new Observable((observer) => {
-    observer.next("Importing AWS CDK modules");
+    observer.next("Importing AWS Lambda modules");
     exec(command, (error, stdout, stderr) => {
       if (error) {
         throw new Error(error.message);

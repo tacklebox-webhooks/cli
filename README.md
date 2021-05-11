@@ -2,9 +2,11 @@
 
 While in development, you should be able to run this in the base directory by doing the following:
 
-npm link (you only need to run this the very first time you use this)
-dispatchr build
-dispatchr destroy
+```javascript
+npm link //you only need to run this the very first time you use this
+tacklebox build
+tacklebox destroy
+```
 
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/dispatchr.svg)](https://npmjs.org/package/dispatchr)
