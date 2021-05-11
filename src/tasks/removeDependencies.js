@@ -1,17 +1,17 @@
 const { Observable } = require("rxjs");
 const { exec } = require("child_process");
 
-const command = "cd src/infrastructure && cdk synth";
+const command = "cd src && rm -rf infrastructure";
 
-const createCloudFormationTemplate = () => {
+const removeDependencies = () => {
   return new Observable((observer) => {
-    observer.next("Creating Cloud Formation template");
+    observer.next("Removing AWS component code");
     exec(command, (error, stdout, stderr) => {
       if (error) {
         throw new Error(error.message);
       }
 
-      observer.next("Finalizing Cloud Formation template");
+      observer.next("Cleaning up");
       setTimeout(() => {
         observer.complete();
       }, 2000);
@@ -19,4 +19,4 @@ const createCloudFormationTemplate = () => {
   });
 };
 
-module.exports = createCloudFormationTemplate;
+module.exports = removeDependencies;

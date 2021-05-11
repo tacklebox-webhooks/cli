@@ -51,7 +51,6 @@
     "posttest": "eslint .",
     "prepack": "oclif-dev manifest && oclif-dev readme",
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
-    "version": "oclif-dev readme && git add README.md",
-    "postinstall": "cd src/infrastructure && npm install"
+    "version": "oclif-dev readme && git add README.md"
   }
 }

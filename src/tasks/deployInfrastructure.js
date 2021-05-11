@@ -1,10 +1,12 @@
 const { Observable } = require("rxjs");
 const { exec } = require("child_process");
 
+const command = "cd src/infrastructure && cdk deploy";
+
 const deployInfrastructure = () => {
   return new Observable((observer) => {
     observer.next("Deploying infrastructure");
-    exec("cd src/infrastructure && cdk deploy", (error, stdout, stderr) => {
+    exec(command, (error, stdout, stderr) => {
       if (error) {
         throw new Error(error.message);
       }

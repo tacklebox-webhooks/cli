@@ -1,6 +1,7 @@
 const { Command, flags } = require("@oclif/command");
 const Listr = require("listr");
 const destroyInfrastructure = require("../tasks/destroyInfrastructure");
+const removeDependencies = require("../tasks/removeDependencies");
 
 class DestroyCommand extends Command {
   async run() {
@@ -11,6 +12,10 @@ class DestroyCommand extends Command {
       {
         title: "Tearing down infrastructure",
         task: destroyInfrastructure,
+      },
+      {
+        title: "Removing AWS component code",
+        task: removeDependencies,
       },
     ]);
 

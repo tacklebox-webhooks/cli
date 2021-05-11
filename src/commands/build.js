@@ -3,6 +3,7 @@ const Listr = require("listr");
 const createCfTemplate = require("../tasks/createCfTemplate");
 const bootstrapDeployment = require("../tasks/bootstrapDeployment");
 const deployInfrastructure = require("../tasks/deployInfrastructure");
+const installDependencies = require("../tasks/installDependencies");
 
 class BuildCommand extends Command {
   async run() {
@@ -10,6 +11,10 @@ class BuildCommand extends Command {
       "\nDeploying dispatchr webhook service infrastructure.  This may take 10+ minutes.\n"
     );
     const tasks = new Listr([
+      {
+        title: "Installing dependencies",
+        task: installDependencies,
+      },
       {
         title: "Cloud Formation Template Creation",
         task: createCfTemplate,

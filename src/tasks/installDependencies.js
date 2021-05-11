@@ -1,17 +1,21 @@
 const { Observable } = require("rxjs");
 const { exec } = require("child_process");
 
-const command = "cd src/infrastructure && cdk synth";
+const command = `cd src &&
+  git clone https://github.com/hook-captain/WHaaS-CDK.git infrastructure &&
+  cd infrastructure &&
+  rm -rf .git &&
+  npm install`;
 
-const createCloudFormationTemplate = () => {
+const installDependencies = () => {
   return new Observable((observer) => {
-    observer.next("Creating Cloud Formation template");
+    observer.next("Importing AWS component code");
     exec(command, (error, stdout, stderr) => {
       if (error) {
         throw new Error(error.message);
       }
 
-      observer.next("Finalizing Cloud Formation template");
+      observer.next("Packaging");
       setTimeout(() => {
         observer.complete();
       }, 2000);
@@ -19,4 +23,4 @@ const createCloudFormationTemplate = () => {
   });
 };
 
-module.exports = createCloudFormationTemplate;
+module.exports = installDependencies;
