@@ -2,25 +2,25 @@ const { Observable } = require("rxjs");
 const { exec } = require("child_process");
 
 const command = `cd src &&
-  git clone https://github.com/hook-captain/WHaaS-CDK.git infrastructure &&
-  cd infrastructure &&
+  git clone https://github.com/hook-captain/management-ui.git ui &&
+  cd ui &&
   rm -rf .git &&
   npm install`;
 
-const installDependencies = () => {
+const installUIDependencies = () => {
   return new Observable((observer) => {
-    observer.next("Importing AWS component code");
+    observer.next("Importing Tacklebox UI code");
     exec(command, (error, stdout, stderr) => {
       if (error) {
         throw new Error(error.message);
       }
 
-      observer.next("Packaging");
+      observer.next("Finalizing");
       setTimeout(() => {
         observer.complete();
-      }, 2000);
+      }, 1000);
     });
   });
 };
 
-module.exports = installDependencies;
+module.exports = installUIDependencies;

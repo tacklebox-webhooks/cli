@@ -1,11 +1,11 @@
 {
-  "name": "dispatchr",
+  "name": "tacklebox",
   "version": "0.0.0",
-  "author": "ArmandoMota @ArmandoMota",
+  "author": "Tacklebox Team",
   "bin": {
-    "dispatchr": "./bin/run"
+    "tacklebox": "./bin/run"
   },
-  "bugs": "https://github.com/ArmandoMota/dispatchr/issues",
+  "bugs": "https://github.com/hook-captain/cli/issues",
   "dependencies": {
     "@oclif/command": "^1.8.0",
     "@oclif/config": "^1.17.0",
@@ -32,7 +32,7 @@
     "/oclif.manifest.json",
     "/src"
   ],
-  "homepage": "https://github.com/ArmandoMota/dispatchr",
+  "homepage": "https://github.com/hook-captain/cli",
   "keywords": [
     "oclif"
   ],
@@ -40,12 +40,12 @@
   "main": "src/index.js",
   "oclif": {
     "commands": "./src/commands",
-    "bin": "dispatchr",
+    "bin": "tacklebox",
     "plugins": [
       "@oclif/plugin-help"
     ]
   },
-  "repository": "ArmandoMota/dispatchr",
+  "repository": "hook-captain/cli",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "eslint .",
