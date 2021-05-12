@@ -4,3 +4,5 @@
 /dist
 /tmp
 node_modules
+infrastructure
+ui

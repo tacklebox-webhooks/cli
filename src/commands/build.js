@@ -6,8 +6,9 @@ const createTbCfTemp = require("../tasks/createTbCfTemp");
 const bootstrapTb = require("../tasks/bootstrapTb");
 const deployTb = require("../tasks/deployTb");
 
-// const importUiCode = require("../tasks/importUiCode");
-// const createUiBuild = require("../tasks/createUiBuild");
+const importUiCode = require("../tasks/importUiCode");
+const populateUiEnv = require("../tasks/populateUiEnv");
+const createUiBuild = require("../tasks/createUiBuild");
 // const deployUi = require("../tasks/deployUi");
 
 class BuildCommand extends Command {
@@ -25,6 +26,10 @@ class BuildCommand extends Command {
         task: importLambdaCode,
       },
       {
+        title: "AWS UI module import",
+        task: importUiCode,
+      },
+      {
         title: "AWS CloudFormation template generation",
         task: createTbCfTemp,
       },
@@ -35,6 +40,14 @@ class BuildCommand extends Command {
       {
         title: "Infrastructure deployment",
         task: deployTb,
+      },
+      {
+        title: "UI environment configuration",
+        task: populateUiEnv,
+      },
+      {
+        title: "Static UI build",
+        task: createUiBuild,
       },
     ]);
 

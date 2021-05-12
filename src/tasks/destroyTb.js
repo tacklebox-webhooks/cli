@@ -1,7 +1,10 @@
 const { Observable } = require("rxjs");
 const { exec } = require("child_process");
 
-const command = "cd src/infrastructure && cdk destroy -f";
+const command = `cd src/infrastructure &&
+  cdk destroy -f &&
+  cd .. &&
+  rm -rf infrastructure`;
 
 const destroyInfrastructure = () => {
   return new Observable((observer) => {
