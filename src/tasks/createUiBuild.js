@@ -1,13 +1,7 @@
 const { Observable } = require("rxjs");
 const { exec } = require("child_process");
 
-const command = `cd src/ui &&
-npm run build &&
-mv build ../build &&
-cd .. &&
-rm -rf ui &&
-mkdir ui &&
-mv build ui/build`;
+const command = "cd src/ui && npm run build";
 
 const buildUI = () => {
   return new Observable((observer) => {

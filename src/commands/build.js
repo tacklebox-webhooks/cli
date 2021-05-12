@@ -5,11 +5,12 @@ const importLambdaCode = require("../tasks/importLambdaCode");
 const createTbCfTemp = require("../tasks/createTbCfTemp");
 const bootstrapTb = require("../tasks/bootstrapTb");
 const deployTb = require("../tasks/deployTb");
+const populateDb = require("../tasks/populateDb");
 
 const importUiCode = require("../tasks/importUiCode");
 const populateUiEnv = require("../tasks/populateUiEnv");
 const createUiBuild = require("../tasks/createUiBuild");
-// const deployUi = require("../tasks/deployUi");
+const deployUi = require("../tasks/deployUi");
 
 class BuildCommand extends Command {
   async run() {
@@ -42,12 +43,20 @@ class BuildCommand extends Command {
         task: deployTb,
       },
       {
+        title: "Database scaffolding",
+        task: populateDb,
+      },
+      {
         title: "UI environment configuration",
         task: populateUiEnv,
       },
       {
         title: "Static UI build",
         task: createUiBuild,
+      },
+      {
+        title: "Management UI deployment",
+        task: deployUi,
       },
     ]);
 

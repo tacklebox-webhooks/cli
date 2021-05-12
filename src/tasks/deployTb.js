@@ -1,8 +1,8 @@
 const { Observable } = require("rxjs");
 const { exec } = require("child_process");
 
-const command =
-  "cd src/infrastructure && cdk deploy --outputs-file outputs.json";
+const command = `cd src/infrastructure &&
+  cdk deploy --outputs-file outputs.json`;
 
 const deployInfrastructure = () => {
   return new Observable((observer) => {

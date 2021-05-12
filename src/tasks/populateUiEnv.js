@@ -7,9 +7,15 @@ const {
 const client = new APIGatewayClient();
 
 const populateUiEnv = () => {
-  const { apiUrl, apiKeyId } = extractApiData();
-  const apiKey = getApiKey(apiKeyId);
-  writeEnvFile(apiUrl, apiKey);
+  return new Observable((observer) => {
+    observer.next("Extracting environment data");
+    const { apiUrl, apiKeyId } = extractApiData();
+    observer.next("Translating environment data");
+    const apiKey = getApiKey(apiKeyId);
+    observer.next("Injecting environment variables");
+    writeEnvFile(apiUrl, apiKey);
+    observer.complete();
+  });
 };
 
 const extractApiData = () => {

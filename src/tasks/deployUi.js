@@ -1,9 +1,9 @@
 const { Observable } = require("rxjs");
 const { exec } = require("child_process");
 
-const command = "cd src/ui && ?????????"; // need to figure out what this is
+const command = null; // need to figure out this command;
 
-const deployManagementUI = () => {
+const deployUI = () => {
   return new Observable((observer) => {
     observer.next("Deploying management UI");
     exec(command, (error, stdout, stderr) => {
@@ -19,4 +19,4 @@ const deployManagementUI = () => {
   });
 };
 
-module.exports = deployManagementUI;
+module.exports = deployUI;
