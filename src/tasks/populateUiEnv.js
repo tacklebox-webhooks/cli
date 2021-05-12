@@ -1,3 +1,4 @@
+const { Observable } = require("rxjs");
 const fs = require("fs");
 const {
   APIGatewayClient,
@@ -30,7 +31,7 @@ const getApiKey = async (id) => {
 };
 
 const writeEnvFile = (apiUrl, apiKey) => {
-  const filepath = "src/ui/.env";
+  const filepath = "src/ui/client/.env";
   const fileContent = `REACT_APP_HOST=${apiUrl}\nREACT_APP_API_KEY=${apiKey}`;
 
   fs.writeFile(filepath, fileContent, (err) => {

@@ -14,90 +14,72 @@ tacklebox destroy
 [![License](https://img.shields.io/npm/l/dispatchr.svg)](https://github.com/ArmandoMota/dispatchr/blob/master/package.json)
 
 <!-- toc -->
-
-- [Usage](#usage)
-- [Commands](#commands)
+* [dispatchr](#dispatchr)
+* [Usage](#usage)
+* [Commands](#commands)
 <!-- tocstop -->
 
 # Usage
 
 <!-- usage -->
-
 ```sh-session
-$ npm install -g dispatchr
-$ dispatchr COMMAND
+$ npm install -g tacklebox
+$ tacklebox COMMAND
 running command...
-$ dispatchr (-v|--version|version)
-dispatchr/0.0.0 darwin-x64 node-v12.18.1
-$ dispatchr --help [COMMAND]
+$ tacklebox (-v|--version|version)
+tacklebox/0.0.0 darwin-x64 node-v16.1.0
+$ tacklebox --help [COMMAND]
 USAGE
-  $ dispatchr COMMAND
+  $ tacklebox COMMAND
 ...
 ```
-
 <!-- usagestop -->
 
 # Commands
 
 <!-- commands -->
+* [`tacklebox build`](#tacklebox-build)
+* [`tacklebox destroy`](#tacklebox-destroy)
+* [`tacklebox help [COMMAND]`](#tacklebox-help-command)
+* [`tacklebox ui`](#tacklebox-ui)
 
-- [`dispatchr build`](#dispatchr-build)
-- [`dispatchr destroy`](#dispatchr-destroy)
-- [`dispatchr hello`](#dispatchr-hello)
-- [`dispatchr help [COMMAND]`](#dispatchr-help-command)
+## `tacklebox build`
 
-## `dispatchr build`
-
-Describe the command here
+The 'build' command sets up all of the AWS infrastructure that is required to run the
 
 ```
 USAGE
-  $ dispatchr build
-
-OPTIONS
-  -n, --name=name  name to print
+  $ tacklebox build
 
 DESCRIPTION
-  ...
-  Extra documentation goes here
+  Tacklebox webhook service.  It takes no arguments and relies on the AWS CLI, which
+     needs to be installed and configured before using this command.
 ```
 
-_See code: [src/commands/build.js](https://github.com/ArmandoMota/dispatchr/blob/v0.0.0/src/commands/build.js)_
+_See code: [src/commands/build.js](https://github.com/hook-captain/cli/blob/v0.0.0/src/commands/build.js)_
 
-## `dispatchr destroy`
+## `tacklebox destroy`
 
-Describe the command here
+The 'destroy' command tears down all of the AWS infrastructure that is required to run the
 
 ```
 USAGE
-  $ dispatchr destroy
-
-OPTIONS
-  -n, --name=name  name to print
+  $ tacklebox destroy
 
 DESCRIPTION
-  ...
-  Extra documentation goes here
+  Tacklebox webhook service.  It takes no arguments and relies on the AWS CLI, which
+  needs to be installed and configured before using this command.
 ```
 
-_See code: [src/commands/destroy.js](https://github.com/ArmandoMota/dispatchr/blob/v0.0.0/src/commands/destroy.js)_
+_See code: [src/commands/destroy.js](https://github.com/hook-captain/cli/blob/v0.0.0/src/commands/destroy.js)_
 
-## `dispatchr hello`
+## `tacklebox help [COMMAND]`
 
-```
-USAGE
-  $ dispatchr hello
-```
-
-_See code: [src/commands/hello.js](https://github.com/ArmandoMota/dispatchr/blob/v0.0.0/src/commands/hello.js)_
-
-## `dispatchr help [COMMAND]`
-
-display help for dispatchr
+display help for tacklebox
 
 ```
 USAGE
-  $ dispatchr help [COMMAND]
+  $ tacklebox help [COMMAND]
 
 ARGUMENTS
   COMMAND  command to show help for
@@ -108,4 +90,21 @@ OPTIONS
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.2/src/commands/help.ts)_
 
+## `tacklebox ui`
+
+Describe the command here
+
+```
+USAGE
+  $ tacklebox ui
+
+OPTIONS
+  -n, --name=name  name to print
+
+DESCRIPTION
+  ...
+  Extra documentation goes here
+```
+
+_See code: [src/commands/ui.js](https://github.com/hook-captain/cli/blob/v0.0.0/src/commands/ui.js)_
 <!-- commandsstop -->

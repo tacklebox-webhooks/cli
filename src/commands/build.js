@@ -2,15 +2,13 @@ const { Command, flags } = require("@oclif/command");
 const Listr = require("listr");
 const importTbCode = require("../tasks/importTbCode");
 const importLambdaCode = require("../tasks/importLambdaCode");
+const importUiCode = require("../tasks/importUiCode");
 const createTbCfTemp = require("../tasks/createTbCfTemp");
 const bootstrapTb = require("../tasks/bootstrapTb");
 const deployTb = require("../tasks/deployTb");
 const populateDb = require("../tasks/populateDb");
-
-const importUiCode = require("../tasks/importUiCode");
 const populateUiEnv = require("../tasks/populateUiEnv");
 const createUiBuild = require("../tasks/createUiBuild");
-const deployUi = require("../tasks/deployUi");
 
 class BuildCommand extends Command {
   async run() {
@@ -18,34 +16,34 @@ class BuildCommand extends Command {
       "\nDeploying Tacklebox webhook service infrastructure.  This may take 10+ minutes.\n"
     );
     const tasks = new Listr([
-      {
-        title: "AWS CDK module import",
-        task: importTbCode,
-      },
-      {
-        title: "AWS Lambda module import",
-        task: importLambdaCode,
-      },
+      // {
+      //   title: "AWS CDK module import",
+      //   task: importTbCode,
+      // },
+      // {
+      //   title: "AWS Lambda module import",
+      //   task: importLambdaCode,
+      // },
       {
         title: "AWS UI module import",
         task: importUiCode,
       },
-      {
-        title: "AWS CloudFormation template generation",
-        task: createTbCfTemp,
-      },
-      {
-        title: "Bootstrap deployment",
-        task: bootstrapTb,
-      },
-      {
-        title: "Infrastructure deployment",
-        task: deployTb,
-      },
-      {
-        title: "Database scaffolding",
-        task: populateDb,
-      },
+      // {
+      //   title: "AWS CloudFormation template generation",
+      //   task: createTbCfTemp,
+      // },
+      // {
+      //   title: "Bootstrap deployment",
+      //   task: bootstrapTb,
+      // },
+      // {
+      //   title: "Infrastructure deployment",
+      //   task: deployTb,
+      // },
+      // {
+      //   title: "Database scaffolding",
+      //   task: populateDb,
+      // },
       {
         title: "UI environment configuration",
         task: populateUiEnv,
@@ -53,10 +51,6 @@ class BuildCommand extends Command {
       {
         title: "Static UI build",
         task: createUiBuild,
-      },
-      {
-        title: "Management UI deployment",
-        task: deployUi,
       },
     ]);
 
