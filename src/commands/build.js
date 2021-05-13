@@ -16,34 +16,34 @@ class BuildCommand extends Command {
       "\nDeploying Tacklebox webhook service infrastructure.  This may take 10+ minutes.\n"
     );
     const tasks = new Listr([
-      {
-        title: "AWS CDK module import",
-        task: importTbCode,
-      },
-      {
-        title: "AWS Lambda module import",
-        task: importLambdaCode,
-      },
-      {
-        title: "AWS UI module import",
-        task: importUiCode,
-      },
-      {
-        title: "AWS CloudFormation template generation",
-        task: createTbCfTemp,
-      },
-      {
-        title: "Bootstrap deployment",
-        task: bootstrapTb,
-      },
-      {
-        title: "Infrastructure deployment",
-        task: deployTb,
-      },
-      {
-        title: "Database scaffolding",
-        task: populateDb,
-      },
+      // {
+      //   title: "AWS CDK module import",
+      //   task: importTbCode,
+      // },
+      // {
+      //   title: "AWS Lambda module import",
+      //   task: importLambdaCode,
+      // },
+      // {
+      //   title: "AWS UI module import",
+      //   task: importUiCode,
+      // },
+      // {
+      //   title: "AWS CloudFormation template generation",
+      //   task: createTbCfTemp,
+      // },
+      // {
+      //   title: "Bootstrap deployment",
+      //   task: bootstrapTb,
+      // },
+      // {
+      //   title: "Infrastructure deployment",
+      //   task: deployTb,
+      // },
+      // {
+      //   title: "Database scaffolding",
+      //   task: populateDb,
+      // },
       {
         title: "UI environment configuration",
         task: populateUiEnv,

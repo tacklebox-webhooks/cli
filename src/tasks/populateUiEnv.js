@@ -11,11 +11,8 @@ const populateUiEnv = () => {
   return new Observable((observer) => {
     observer.next("Extracting environment data");
     const { apiUrl, apiKeyId } = extractApiData();
-    observer.next("Translating environment data");
-    const apiKey = getApiKey(apiKeyId);
-    observer.next("Injecting environment variables");
-    writeEnvFile(apiUrl, apiKey);
-    observer.complete();
+
+    writeApiDataToEnv(apiUrl, apiKeyId, observer);
   });
 };
 
@@ -25,9 +22,18 @@ const extractApiData = () => {
   return json.Tacklebox;
 };
 
-const getApiKey = async (id) => {
-  const command = new GetApiKeyCommand({ apiKey: id, includeValue: true });
-  client.send(command, (err, data) => data.value);
+const writeApiDataToEnv = (apiUrl, apiKeyId, observer) => {
+  observer.next("Translating environment data");
+  const command = new GetApiKeyCommand({
+    apiKey: apiKeyId,
+    includeValue: true,
+  });
+  client.send(command, (err, data) => {
+    const apiKey = data.value;
+    observer.next("Injecting environment variables");
+    writeEnvFile(apiUrl, apiKey);
+    observer.complete();
+  });
 };
 
 const writeEnvFile = (apiUrl, apiKey) => {
