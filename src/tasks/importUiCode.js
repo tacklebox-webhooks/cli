@@ -3,7 +3,7 @@ const { exec } = require("child_process");
 
 const command = `cd src &&
   rm -rf ui &&
-  git clone https://github.com/hook-captain/management-ui.git ui &&
+  git clone https://github.com/tacklebox-webhooks/management-ui.git ui &&
   cd ui &&
   rm -rf .git &&
   cd client &&

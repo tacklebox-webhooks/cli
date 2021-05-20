@@ -2,7 +2,7 @@ const { Observable } = require("rxjs");
 const { exec } = require("child_process");
 
 const command = `cd src/infrastructure &&
-  git clone https://github.com/hook-captain/webhook-service.git toRemove &&
+  git clone https://github.com/tacklebox-webhooks/webhook-service.git toRemove &&
   mv toRemove/lambdas lambdas &&
   rm -rf toRemove &&
   npm install`;
