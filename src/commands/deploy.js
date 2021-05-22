@@ -11,12 +11,12 @@ const populateDb = require("../tasks/populateDb");
 const populateUiEnv = require("../tasks/populateUiEnv");
 const createUiBuild = require("../tasks/createUiBuild");
 const outputTackleboxUrl = require("../tasks/outputTackleboxUrl");
+const outputTackleboxLogo = require("../tasks/outputTackleboxLogo");
 
 class BuildCommand extends Command {
   async run() {
-    console.log(
-      "\nDeploying Tacklebox webhook service infrastructure.  This may take 20+ minutes.\n"
-    );
+    outputTackleboxLogo();
+
     const tasks = new Listr([
       {
         title: "AWS CDK module import",
@@ -69,7 +69,7 @@ class BuildCommand extends Command {
 }
 
 BuildCommand.description = `The 'deploy' command sets up all of the AWS infrastructure that is required to run the
-  Tacklebox webhook service.  It takes no arguments and relies on the AWS CLI, which
-  needs to be installed and configured before using this command.`;
+  Tacklebox webhook service.  It takes no arguments and relies on the AWS CLI and AWS CDK, which
+  need to be installed and configured before using this command.`;
 
 module.exports = BuildCommand;
