@@ -24,7 +24,7 @@ const extractLambdaArn = () => {
   const fileData = fs.readFileSync("src/infrastructure/outputs.json", "utf8");
   const json = JSON.parse(fileData);
   const stackData = json.Tacklebox;
-  return stackData.dbSetupLambda;
+  return stackData.setupDbLambda;
 };
 
 const runPopulateDbLambda = async (lambdaArn) => {
