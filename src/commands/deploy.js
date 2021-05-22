@@ -5,6 +5,7 @@ const importLambdaCode = require("../tasks/importLambdaCode");
 const importUiCode = require("../tasks/importUiCode");
 const createTbCfTemp = require("../tasks/createTbCfTemp");
 const bootstrapTb = require("../tasks/bootstrapTb");
+const deployPermissions = require("../tasks/deployPermissions");
 const deployTb = require("../tasks/deployTb");
 const populateDb = require("../tasks/populateDb");
 const populateUiEnv = require("../tasks/populateUiEnv");
@@ -13,7 +14,7 @@ const createUiBuild = require("../tasks/createUiBuild");
 class BuildCommand extends Command {
   async run() {
     console.log(
-      "\nDeploying Tacklebox webhook service infrastructure.  This may take 10+ minutes.\n"
+      "\nDeploying Tacklebox webhook service infrastructure.  This may take 20+ minutes.\n"
     );
     const tasks = new Listr([
       {
@@ -35,6 +36,10 @@ class BuildCommand extends Command {
       {
         title: "Bootstrap deployment",
         task: bootstrapTb,
+      },
+      {
+        title: "Permissions deployment",
+        task: deployPermissions,
       },
       {
         title: "Infrastructure deployment",

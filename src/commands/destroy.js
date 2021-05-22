@@ -1,6 +1,7 @@
 const { Command, flags } = require("@oclif/command");
 const Listr = require("listr");
 const destroyTb = require("../tasks/destroyTb");
+const destroyPermissions = require("../tasks/destroyPermissions");
 const removeTbCode = require("../tasks/removeTbCode");
 
 // const destroyUi = require("../tasks/destroyUi");
@@ -14,6 +15,10 @@ class DestroyCommand extends Command {
       {
         title: "Tearing down infrastructure",
         task: destroyTb,
+      },
+      {
+        title: "Removing IAM Roles",
+        task: destroyPermissions,
       },
       {
         title: "Removing AWS component code",
