@@ -10,6 +10,7 @@ const deployTb = require("../tasks/deployTb");
 const populateDb = require("../tasks/populateDb");
 const populateUiEnv = require("../tasks/populateUiEnv");
 const createUiBuild = require("../tasks/createUiBuild");
+const outputTackleboxUrl = require("../tasks/outputTackleboxUrl");
 
 class BuildCommand extends Command {
   async run() {
@@ -59,13 +60,15 @@ class BuildCommand extends Command {
       },
     ]);
 
-    tasks.run().catch((err) => {
+    await tasks.run().catch((err) => {
       console.error(err);
     });
+
+    outputTackleboxUrl();
   }
 }
 
-BuildCommand.description = `The 'build' command sets up all of the AWS infrastructure that is required to run the
+BuildCommand.description = `The 'deploy' command sets up all of the AWS infrastructure that is required to run the
   Tacklebox webhook service.  It takes no arguments and relies on the AWS CLI, which
   needs to be installed and configured before using this command.`;
 
