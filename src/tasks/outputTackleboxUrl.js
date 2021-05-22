@@ -14,7 +14,7 @@ const outputTackleboxUrl = () => {
     borderStyle: "double",
   });
 
-  console.log(mainUrlMessage, "\n", formattedApiUrl);
+  console.log("\n", mainUrlMessage, "\n", formattedApiUrl);
 };
 
 const extractUrl = () => {
