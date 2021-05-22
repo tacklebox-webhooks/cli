@@ -8,8 +8,15 @@ const populateDb = () => {
   return new Observable((observer) => {
     observer.next("Populating db with basic tables");
     const lambdaArn = extractLambdaArn();
-    runPopulateDbLambda(lambdaArn);
-    observer.complete();
+    setTimeout(() => {
+      runPopulateDbLambda(lambdaArn)
+        .then((response) => {
+          observer.complete();
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }, 60000);
   });
 };
 
@@ -23,9 +30,9 @@ const extractLambdaArn = () => {
 const runPopulateDbLambda = async (lambdaArn) => {
   const command = new InvokeCommand({
     FunctionName: lambdaArn,
-    InvocationType: "Event",
   });
-  client.send(command);
+  const response = await client.send(command);
+  return response;
 };
 
 module.exports = populateDb;
