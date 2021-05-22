@@ -2,9 +2,11 @@ const { Observable } = require("rxjs");
 const { exec } = require("child_process");
 
 const command = `cd src/infrastructure &&
-  cdk destroy Tacklebox -f`;
+  cdk destroy tacklebox-iam -f &&
+  cd .. &&
+  rm -rf infrastructure`;
 
-const destroyInfrastructure = () => {
+const destroyPermissions = () => {
   return new Observable((observer) => {
     observer.next("Tearing down deployment");
     exec(command, (error, stdout, stderr) => {
@@ -20,4 +22,4 @@ const destroyInfrastructure = () => {
   });
 };
 
-module.exports = destroyInfrastructure;
+module.exports = destroyPermissions;
