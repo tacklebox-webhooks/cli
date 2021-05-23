@@ -1,4 +1,8 @@
-![Tacklebox Logo](https://i.imgur.com/s9Gvwsg.png) 
+<p style="align-text: center;">
+  <img src="https://i.imgur.com/s9Gvwsg.png">
+</p>
+
+<!--<blockquote class="imgur-embed-pub" lang="en" data-id="a/EVBVCyP" data-context="false" ><a href="//imgur.com/a/EVBVCyP">Tacklebox</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>-->
 
 [![Tacklebox](https://img.shields.io/badge/tacklebox-case%20study-blue)](https://tacklebox-webhooks.github.io)
 
