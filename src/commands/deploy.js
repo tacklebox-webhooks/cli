@@ -47,16 +47,16 @@ class BuildCommand extends Command {
         task: deployTb,
       },
       {
-        title: "Database scaffolding",
-        task: populateDb,
-      },
-      {
         title: "UI environment configuration",
         task: populateUiEnv,
       },
       {
         title: "Static UI build",
         task: createUiBuild,
+      },
+      {
+        title: "Database scaffolding",
+        task: populateDb,
       },
     ]);
 
