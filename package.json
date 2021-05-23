@@ -1,11 +1,31 @@
 {
-  "name": "tacklebox",
-  "version": "0.0.0",
-  "author": "Tacklebox Team",
+  "name": "tacklebox-webhooks",
+  "version": "0.1.0",
+  "main": "src/index.js",
+  "homepage": "https://github.com/tacklebox-webhooks/cli",
+  "description": "An open-source serverless framework that offers webhooks as a service.",
+  "author": "Juan Palma",
+  "contributors": [
+    {
+      "name": "Kevin Counihan"
+    },
+    {
+      "name": "Armando Mota"
+    },
+    {
+      "name": "Kayl Thomas"
+    },
+    {
+      "name": "Juan Palma"
+    }
+  ],
+  "license": "MIT",
   "bin": {
     "tacklebox": "./bin/run"
   },
-  "bugs": "https://github.com/hook-captain/cli/issues",
+  "bugs": {
+    "url": "https://github.com/tacklebox-webhooks/cli/issues"
+  },
   "dependencies": {
     "@aws-sdk/client-api-gateway": "^3.15.0",
     "@aws-sdk/client-lambda": "^3.15.0",
@@ -36,12 +56,9 @@
     "/oclif.manifest.json",
     "/src"
   ],
-  "homepage": "https://github.com/hook-captain/cli",
   "keywords": [
     "oclif"
   ],
-  "license": "MIT",
-  "main": "src/index.js",
   "oclif": {
     "commands": "./src/commands",
     "bin": "tacklebox",
@@ -49,7 +66,10 @@
       "@oclif/plugin-help"
     ]
   },
-  "repository": "hook-captain/cli",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tacklebox-webhooks/cli.git"
+  },
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "eslint .",
