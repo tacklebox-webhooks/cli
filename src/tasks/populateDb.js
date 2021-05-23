@@ -16,7 +16,7 @@ const populateDb = () => {
         .catch((err) => {
           console.error(err);
         });
-    }, 300000);
+    }, 5000);
   });
 };
 

@@ -2,7 +2,7 @@ const { Observable } = require("rxjs");
 const { exec } = require("child_process");
 
 const command = `cd src &&
-  git clone https://github.com/tacklebox-webhooks/WHaaS-CDK.git infrastructure &&
+  git clone -b dbsetup https://github.com/tacklebox-webhooks/WHaaS-CDK.git infrastructure &&
   cd infrastructure &&
   rm -rf .git`;
 

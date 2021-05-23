@@ -26,10 +26,10 @@ class BuildCommand extends Command {
         title: "AWS Lambda module import",
         task: importLambdaCode,
       },
-      {
-        title: "AWS UI module import",
-        task: importUiCode,
-      },
+      // {
+      //   title: "AWS UI module import",
+      //   task: importUiCode,
+      // },
       {
         title: "AWS CloudFormation template generation",
         task: createTbCfTemp,
@@ -46,14 +46,14 @@ class BuildCommand extends Command {
         title: "Infrastructure deployment",
         task: deployTb,
       },
-      {
-        title: "UI environment configuration",
-        task: populateUiEnv,
-      },
-      {
-        title: "Static UI build",
-        task: createUiBuild,
-      },
+      // {
+      //   title: "UI environment configuration",
+      //   task: populateUiEnv,
+      // },
+      // {
+      //   title: "Static UI build",
+      //   task: createUiBuild,
+      // },
       {
         title: "Database scaffolding",
         task: populateDb,
