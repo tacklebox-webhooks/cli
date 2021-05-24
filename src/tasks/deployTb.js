@@ -18,7 +18,7 @@ const deployInfrastructure = () => {
           observer.complete();
         }, 2000);
       });
-    }, 120000);
+    }, 5000);
   });
 };
 
