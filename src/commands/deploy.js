@@ -68,8 +68,8 @@ class BuildCommand extends Command {
   }
 }
 
-BuildCommand.description = `The 'deploy' command sets up all of the AWS infrastructure that is required to run the
-  Tacklebox webhook service.  It takes no arguments and relies on the AWS CLI and AWS CDK, which
-  need to be installed and configured before using this command.`;
+BuildCommand.description = `sets up all of the AWS infrastructure that is required to run the ` +
+  `Tacklebox webhook service.  It takes no arguments and relies on the AWS CLI and AWS CDK, which ` +
+  `need to be installed and configured before using this command.`;
 
 module.exports = BuildCommand;
