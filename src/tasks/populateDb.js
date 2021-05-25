@@ -30,6 +30,7 @@ const extractLambdaArn = () => {
 const runPopulateDbLambda = async (lambdaArn) => {
   const command = new InvokeCommand({
     FunctionName: lambdaArn,
+    InvocationType: "Event"
   });
   const response = await client.send(command);
   return response;
