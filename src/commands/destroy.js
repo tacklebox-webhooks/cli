@@ -32,8 +32,8 @@ class DestroyCommand extends Command {
   }
 }
 
-DestroyCommand.description = `The 'destroy' command tears down all of the AWS infrastructure that is required to run the
-Tacklebox webhook service.  It takes no arguments and relies on the AWS CLI, which
-needs to be installed and configured before using this command.`;
+DestroyCommand.description = `tears down all of the AWS infrastructure that is required to run the ` +
+`Tacklebox webhook service.  It takes no arguments and relies on the AWS CLI, which ` +
+`needs to be installed and configured before using this command.`;
 
 module.exports = DestroyCommand;

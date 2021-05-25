@@ -16,7 +16,7 @@ class UiCommand extends Command {
   }
 }
 
-UiCommand.description = `This command spins up Tacklebox's management UI 
-  on localhost:3001`;
+UiCommand.description = `This command spins up Tacklebox's management UI ` +
+  `on localhost:3001`;
 
 module.exports = UiCommand;
