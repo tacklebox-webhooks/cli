@@ -7,9 +7,9 @@ const outputTackleboxInfo = () => {
   console.log("\nYour webhook service is now deployed in AWS.\n");
 
   const coloredApiUrl = chalk.hex("#C06C84").bold(apiUrl);
-  const colordApiKey = chalk.hex("#C06C84").bold(apiKey);
+  const coloredApiKey = chalk.hex("#C06C84").bold(apiKey);
   const formattedApiUrl = boxen(
-    `API Host: ${coloredApiUrl}\n\nAPI Key: ${coloredApiKey}`,
+    `API Host: ${coloredApiUrl}\n\nAPI Key:  ${coloredApiKey}`,
     {
       borderColor: "#355C7D",
       padding: 1,
