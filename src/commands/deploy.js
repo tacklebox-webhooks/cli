@@ -10,7 +10,7 @@ const deployTb = require("../tasks/deployTb");
 const populateDb = require("../tasks/populateDb");
 const populateUiEnv = require("../tasks/populateUiEnv");
 const createUiBuild = require("../tasks/createUiBuild");
-const outputTackleboxUrl = require("../tasks/outputTackleboxUrl");
+const outputTackleboxInfo = require("../tasks/outputTackleboxInfo");
 const outputTackleboxLogo = require("../tasks/outputTackleboxLogo");
 
 class BuildCommand extends Command {
@@ -64,11 +64,12 @@ class BuildCommand extends Command {
       console.error(err);
     });
 
-    outputTackleboxUrl();
+    outputTackleboxInfo();
   }
 }
 
-BuildCommand.description = `sets up all of the AWS infrastructure that is required to run the ` +
+BuildCommand.description =
+  `sets up all of the AWS infrastructure that is required to run the ` +
   `Tacklebox webhook service.  It takes no arguments and relies on the AWS CLI and AWS CDK, which ` +
   `need to be installed and configured before using this command.`;
 
