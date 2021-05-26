@@ -13,15 +13,15 @@ class DestroyCommand extends Command {
     );
     const tasks = new Listr([
       {
-        title: "Tearing down infrastructure",
+        title: "Tear down infrastructure",
         task: destroyTb,
       },
       {
-        title: "Removing IAM Roles",
+        title: "Remove IAM Roles",
         task: destroyPermissions,
       },
       {
-        title: "Removing AWS component code",
+        title: "Remove AWS component code",
         task: removeTbCode,
       },
     ]);
