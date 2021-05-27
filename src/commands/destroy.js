@@ -3,8 +3,7 @@ const Listr = require("listr");
 const destroyTb = require("../tasks/destroyTb");
 const destroyPermissions = require("../tasks/destroyPermissions");
 const removeTbCode = require("../tasks/removeTbCode");
-
-// const destroyUi = require("../tasks/destroyUi");
+const destroyUI = require("../tasks/destroyUI");
 
 class DestroyCommand extends Command {
   async run() {
@@ -23,6 +22,10 @@ class DestroyCommand extends Command {
       {
         title: "Remove AWS component code",
         task: removeTbCode,
+      },
+      {
+        title: "Remove UI code",
+        task: destroyUI,
       },
     ]);
 
