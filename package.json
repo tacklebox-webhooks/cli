@@ -73,6 +73,5 @@
   "scripts": {
     "posttest": "eslint .",
     "test": "nyc mocha --forbid-only \"test/**/*.test.js\"",
-    "version": "oclif-dev readme && git add README.md"
   }
 }
