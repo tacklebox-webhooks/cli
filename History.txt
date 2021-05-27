@@ -1,3 +1,8 @@
+=== 0.1.1 / 2021-05-26
+
+* Fixed intermittent deployment bug related to permissions
+* Refactored destroy command
+
 === 0.1.0 / 2021-05-22
 
 * Initial public release
