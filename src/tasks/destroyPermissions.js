@@ -2,9 +2,7 @@ const { Observable } = require("rxjs");
 const { exec } = require("child_process");
 
 const command = `cd src/infrastructure &&
-  cdk destroy tacklebox-iam -f &&
-  cd .. &&
-  rm -rf infrastructure`;
+  cdk destroy tacklebox-iam -f`;
 
 const destroyPermissions = () => {
   return new Observable((observer) => {

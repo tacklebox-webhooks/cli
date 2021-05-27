@@ -1,7 +1,8 @@
 const { Observable } = require("rxjs");
 const { exec } = require("child_process");
 
-const command = "cd src/ui && ????????"; // need to figure out what to do here
+const command = `cd src &&
+  rm -rf ui`;
 
 const destroyUI = () => {
   return new Observable((observer) => {

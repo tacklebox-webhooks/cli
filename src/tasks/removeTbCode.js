@@ -1,7 +1,8 @@
 const { Observable } = require("rxjs");
 const { exec } = require("child_process");
 
-const command = "cd src && rm -rf infrastructure";
+const command = `cd src &&
+  rm -rf infrastructure`;
 
 const removeDependencies = () => {
   return new Observable((observer) => {
