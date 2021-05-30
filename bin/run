@@ -1,5 +1,10 @@
 #!/usr/bin/env node
 
+const path = require("path");
+const process = require('process');
+
+process.chdir(path.resolve(__dirname, '..'));
+
 require('@oclif/command').run()
 .then(require('@oclif/command/flush'))
-.catch(require('@oclif/errors/handle'))
+.catch(require('@oclif/errors/handle'));

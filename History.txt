@@ -1,3 +1,8 @@
+=== 0.1.2 / 2021-05-29
+
+* Fixed package release bug related to commands not found
+* Updated README
+
 === 0.1.1 / 2021-05-26
 
 * Fixed intermittent deployment bug related to permissions
