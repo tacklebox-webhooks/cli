@@ -38,9 +38,10 @@ and you can also watch our presentation [here](https://www.youtube.com/watch?v=Q
 * Node.js >= 8.10
 * NPM
 
-Tacklebox requires that users have an account with AWS and have set up an
-AWS CLI configuration on their local machine. If you have not already done so,
-please visit [Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
+Tacklebox requires that users have an account with AWS, have set up an
+AWS CLI configuration as well as have installed the AWS CDK on their local machine.
+If you have not already done so, please visit
+[Configuring the AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
 and [Configuring the AWS CDK](https://docs.aws.amazon.com/cdk/latest/guide/cli.html)
 for instructions. Tacklebox will use the default credentials and region specified
 within that profile in order to interact with AWS services.
