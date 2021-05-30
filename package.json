@@ -1,6 +1,6 @@
 {
   "name": "tacklebox-webhooks",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "src/index.js",
   "homepage": "https://github.com/tacklebox-webhooks/cli",
   "description": "An open-source serverless framework that offers webhooks as a service.",
