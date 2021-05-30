@@ -15,7 +15,7 @@ It includes:
     [Python](https://github.com/tacklebox-webhooks/python),
     and [Go](https://github.com/tacklebox-webhooks/golang))
 - a RESTful API with docs
-- an admin UI
+- a management UI
 
 You can read more about our case study [here](https://tacklebox-webhooks.github.io"),
 and you can also watch our presentation [here](https://www.youtube.com/watch?v=QEFFlWNNwk8&t=1s).
