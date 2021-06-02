@@ -72,8 +72,6 @@ tacklebox <commandName>
 
 The `deploy` command will create instances of the below:
 - API Gateway resource
-- SNS topic
-- CloudWatch Logs log groups
 - Lambda functions
 - RDS instance with PostgreSQL
 - VPC
