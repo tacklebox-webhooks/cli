@@ -29,7 +29,7 @@ class DestroyCommand extends Command {
       },
     ]);
 
-    tasks.run().catch((err) => {
+    await tasks.run().catch((err) => {
       console.error(err);
     });
   }

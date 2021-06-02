@@ -38,6 +38,7 @@
     "rxjs": "^7.0.0"
   },
   "devDependencies": {
+    "@aws-sdk/client-cloudformation": "^3.17.0",
     "@oclif/dev-cli": "^1.26.0",
     "@oclif/test": "^1.2.8",
     "chai": "^4.3.4",
@@ -71,7 +72,6 @@
     "url": "https://github.com/tacklebox-webhooks/cli.git"
   },
   "scripts": {
-    "posttest": "eslint .",
-    "test": "nyc mocha --forbid-only \"test/**/*.test.js\""
+    "test": "mocha"
   }
 }
