@@ -14,7 +14,7 @@ It includes:
     [Ruby](https://github.com/tacklebox-webhooks/ruby),
     [Python](https://github.com/tacklebox-webhooks/python),
     and [Go](https://github.com/tacklebox-webhooks/golang))
-- a RESTful API with docs
+- a RESTful API
 - a management UI
 
 You can read more about our case study [here](https://tacklebox-webhooks.github.io"),
