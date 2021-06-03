@@ -1,0 +1,22 @@
+config:
+  target: "https://mjfhf9t4dg.execute-api.us-east-2.amazonaws.com/v1/"
+  http:
+    pool: 20
+  phases:
+    - duration: 600
+      arrivalCount: 600
+  processor: "./setBody.js"
+scenarios:
+  - flow:
+    - loop:
+      - post:
+          beforeRequest: "setBody"
+          url: "https://mjfhf9t4dg.execute-api.us-east-2.amazonaws.com/v1/services/aafbd354-2075-499b-9e7c-4afa06ebe25c/users/3207c7ed-77d9-49db-950b-185062852604/events"
+          headers:
+            x-api-key: "dCcDNZk6gE9l4uxFej40W5vvmg0QuN3w4OAJBLc6"
+            Content-Type: "application/json"
+          body:
+            idempotency_key: ""
+            event_type: ""
+            payload: ""
+      count: 20
