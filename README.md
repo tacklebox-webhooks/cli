@@ -17,7 +17,7 @@ It includes:
 - a RESTful API
 - a management UI
 
-You can read more about our case study [here](https://tacklebox-webhooks.github.io").
+You can read more about our case study [here](https://tacklebox-webhooks.github.io).
 
 ## The Team
 **Juan Palma** *Software Engineer* Phoenix, AZ
